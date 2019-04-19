@@ -1,0 +1,22 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "restaurant app where users input burgers they want to eat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsyum/burger.git"
+  },
+  "author": "J Yum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsyum/burger/issues"
+  },
+  "homepage": "https://github.com/jsyum/burger#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
