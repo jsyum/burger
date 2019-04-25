@@ -5,6 +5,7 @@ var router = express.Router();
 
 var burger = require("../models/burger.js");
 var orm = require("../config/orm");
+// var burgerData =
 
 router.get("/", function(req, res) {
   burger.all(function(data) {
@@ -15,11 +16,12 @@ router.get("/", function(req, res) {
     res.render("index", hbsObject);
   });
 });
-//   res.json({
-//     message: "test"
-//   });
-// });
-// });
+router.post("/api/burgers", function(req, res) {
+  burger.create(["burger_name"], [req.body.name], function(result) {
+    // Send back the ID of the new quote
+    res.json({ id: result.insertId });
+  });
+});
 
 // Export routes for server.js
 module.exports = router;
