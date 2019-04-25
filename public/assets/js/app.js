@@ -22,8 +22,7 @@ $(function() {
   $("#eat").on("click", function(event) {
     {
       var id = $(this).data("id");
-      var newDevoured = $(this).data("newdevoured");
-
+      var newDevoured = $(this).data("newsleep");
       var newDevouredState = {
         devoured: newDevoured
       };
@@ -33,7 +32,7 @@ $(function() {
         type: "PUT",
         data: newDevouredState
       }).then(function() {
-        console.log("changed devoured state to", newDevouredState);
+        console.log("changed devoured state to", newDevoured);
         // Reload the page to get the updated list
         location.reload();
       });
