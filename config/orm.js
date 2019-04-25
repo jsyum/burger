@@ -39,37 +39,8 @@ function objToSql(ob) {
   return arr.toString();
 }
 
-// Object Relational Mapper (ORM)
-// The ?? signs are for swapping out table or column names
-// The ? signs are for swapping out other values
-// These help avoid SQL injection
-// https://en.wikipedia.org/wiki/SQL_injection
+//Writing orm framework for querying a database table
 var orm = {
-  // selectAll: function(cb) {
-  //   connection.query("SELECT * FROM burgers", function(err, data) {
-  //     if (err) cb(err, null);
-  //     cb(null, data);
-  //   });
-  // }
-  // selectAll: function(table, cb) {
-  //   var queryString = "SELECT * FROM ??";
-  //   connection.query(queryString, table, function(err, res) {
-  //     if (err) throw err;
-  //     console.log(res);
-  //     cb(res);
-  //   });
-  // },
-  // insertOne: function(table, column, value, cb) {
-  //   var queryString = "INSERT INTO ?? VALUES ?";
-  //   connection.query(queryString, [table, column, value], function(
-  //     err,
-  //     result
-  //   ) {
-  //     if (err) throw err;
-  //     console.log(result);
-  //     cb(res);
-  //   });
-  // },
   selectAll: function(tableInput, cb) {
     var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
