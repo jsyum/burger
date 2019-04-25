@@ -4,7 +4,7 @@
 <h2>Current burgers</h2>
 {{#each burgers}}
 {{#unless devoured}}
-<li>{{this.burger_name}}
+<li><span id=burger_name>{{this.burger_name}}</span><button type="button" class="btn btn-info" id="eat">Eat me!</button>
 </li>
 {{/unless}}
 {{/each}}

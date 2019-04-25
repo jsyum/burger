@@ -4,3 +4,7 @@ body {
   margin-left: 20px;
   margin-top: 15px;
 }
+
+#burger_name {
+  margin: 10px;
+}
