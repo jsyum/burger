@@ -29,7 +29,7 @@ $(function() {
       devoured: 1
     };
 
-    // Send the PUT request.
+    // Send PUT request.
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
       data: devouredState
@@ -37,5 +37,15 @@ $(function() {
       console.log("Burger devoured");
       location.reload();
     });
+  });
+  $(".deleteButton").on("click", function(event) {
+    event.preventDefault();
+    alert("clicked");
+    var id = $(this).data("id");
+
+    // Send DELETE request.
+    $.ajax("/api/burgers/" + id, {
+      type: "DELETE"
+    }).then(location.reload());
   });
 });
