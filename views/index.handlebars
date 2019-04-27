@@ -4,7 +4,8 @@
 <h2>Current burgers</h2>
 {{#each burgers}}
 {{#unless devoured}}
-<li><span id=burger_name>{{this.burger_name}}</span><button type="button" class="btn btn-info" id="eat">Eat me!</button>
+<li><span id=burger_name>{{this.burger_name}}</span><button type="button" class="eatButton btn btn-info" id="eat"
+        data-id="{{this.id}}" data-newDevoured="{{devour}}">Eat me!</button>
 </li>
 {{/unless}}
 {{/each}}
@@ -12,13 +13,14 @@
 <h2>Devoured burgers</h2>
 {{#each burgers}}
 {{#if devoured}}
-<li>{{this.burger_name}}
+<li><span>{{this.burger_name}}</span><button type="button" class="deleteButton btn btn-info" data-id="{{this.id}}"
+        data-newDevoured="{{devour}}">Delete!</button>
 </li>
 {{/if}}
 {{/each}}
 <br>
 <h3>Add a Burger</h3>
-<form class="create-form">
+<form class=" create-form">
 
     <div class="form-group">
         <label for="bg">Burger name:</label>

@@ -5,6 +5,10 @@ body {
   margin-top: 15px;
 }
 
-#burger_name {
+.eatButton {
+  margin: 10px;
+}
+
+.deleteButton {
   margin: 10px;
 }

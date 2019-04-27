@@ -1,5 +1,6 @@
 var express = require("express");
 var app = express();
+var bodyParser = require("body-parser");
 
 // Set the port of our application
 // process.env.PORT lets the port be set by Heroku
@@ -9,8 +10,10 @@ var PORT = process.env.PORT || 8080;
 app.use(express.static("public"));
 
 // Sets up the Express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // Set up Express Handlebars
 var exphbs = require("express-handlebars");
